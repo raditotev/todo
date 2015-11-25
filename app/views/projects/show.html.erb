@@ -1,0 +1,9 @@
+<h1><%= @project.name %></h1>
+
+<% @project.tasks.each do |t| %>
+<ul>
+  <li><%= t.name %></li>
+</ul>
+<% end %>
+
+<%= link_to "View all projects", root_url %>

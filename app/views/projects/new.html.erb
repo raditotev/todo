@@ -1,0 +1,19 @@
+<h1>Create Project</h1>
+
+<%= form_for @project do |f| %>
+<h3>Enter project name</h3>
+<p>
+
+  <%= f.text_field :name %>
+</p>
+
+  <%= f.fields_for :tasks do |task| %>
+  <strong>Enter task</strong>
+  <p>
+    <%= task.text_field :name %>
+  </p>
+  <% end %>
+  <%= f.submit %>
+
+
+<% end %>

@@ -1,0 +1,16 @@
+<h1 style="text-align:center;">Current projects</h1>
+
+<h2>Create new project</h2>
+
+<%= form_tag(new_project_path, method: 'get') do %>
+  <%= select_tag(:num_tasks, options_for_select(1..10), include_blank: "Choose number of tasks") %>
+  <%= submit_tag "Create" %>
+<% end %>
+
+<% @projects.each do |p| %>
+
+<h3><%= link_to p.name, project_path(p) %></h3>
+
+
+<% end %>
+
